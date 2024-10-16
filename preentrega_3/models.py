@@ -1,8 +1,9 @@
 from django.db import models
 
-class Producto(models.Model):
+class Productos(models.Model):
     producto    = models.CharField(max_length=20)
     precio      = models.IntegerField()
     stock       = models.IntegerField()
-    fecha       = models.DateField()
-
+    
+    def __str__(self):
+        return f'{self.id} {self.producto} {self.precio} {self.stock}'

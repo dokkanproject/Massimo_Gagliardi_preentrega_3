@@ -1,10 +1,32 @@
 {% extends "index.html" %}
 {% block title_head %} Buscar Producto {% endblock title_head %}
-{% block texto_principal %}Buscar Productos{% endblock texto_principal %}
+{% block texto_principal %}
+
+Buscar Productos
+
+<div class="container col-md-6 form-group">
+    <form action={% url "buscar_producto" %}>
+        <br>
+        {{form.producto}}
+        <br>
+        <div class="form-group">
+            <input class="btn btn-primary btn-xl text-uppercase" type='submit' value='Buscar' />
+        </div>
+    </form>
+</div>
+{% endblock texto_principal %}
+
 {% block main %}
-<form action={% url "buscar_producto" %}>
-
-
-</form>
-<p>Selecciona el producto a Buscar</p>
+    {% if productos %}
+    <div class="container col-md-6 form-group">
+    <h4 class="my-3" style="text-align: center;">Productos encontrados</h4>
+        <ul>
+            {% for producto in productos %}
+            <li><p class="text-muted">{{producto}}<p></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <h4 class="my-3">No se encontraron Productos Registrados</h4>
+    </div>
+    {% endif %}
 {% endblock main %}
