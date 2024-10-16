@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'preentrega_3.urls'
+ROOT_URLCONF = 'massimo_gagliardi_preentrega3.urls'
 
 TEMPLATES = [
     {
