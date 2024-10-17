@@ -8,3 +8,4 @@ class crearFormulario(forms.Form):
 
 class buscarFormulario(forms.Form):
     producto    = forms.CharField(max_length=20, required=False, widget=forms.TextInput(attrs={'placeholder': '* ingrese el Producto', 'style': 'width: 100%;', 'class': 'form-control'}))
+    
